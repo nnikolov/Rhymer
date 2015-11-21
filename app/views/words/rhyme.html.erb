@@ -1,0 +1,13 @@
+<%= form_tag '/rhyme' do%> 
+  <div class="field">
+    <%= text_field_tag :match_string %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'submit'%>
+    <%= link_to 'Words', words_path %>
+  </div>
+<% end %>
+
+<% @words.each do |word| %>
+<%= word.value %>
+<% end %>

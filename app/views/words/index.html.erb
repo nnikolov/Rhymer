@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Words</h1>
+
+<%= link_to 'New Word', new_word_path %>
+| <%= link_to 'Add many words', new_words_path %>
+| <%= link_to 'Rhyme', rhyme_path %>
+
+<br>
+<% ('а'..'я').to_a.each do |letter| %>
+<%= link_to letter, word_start_path(letter) %>
+<% end %>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.value %></td>
+        <td><%= link_to 'Show', word %></td>
+        <td><%= link_to 'Edit', edit_word_path(word) %></td>
+        <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
