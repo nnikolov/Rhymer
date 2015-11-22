@@ -11,6 +11,10 @@
 <%= link_to letter, word_start_path(letter) %>
 <% end %>
 <br>
+<% ('a'..'z').to_a.each do |letter| %>
+<%= link_to letter, word_start_path(letter) %>
+<% end %>
+<br>
 
 <table>
   <thead>

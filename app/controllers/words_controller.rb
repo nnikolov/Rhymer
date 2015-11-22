@@ -26,7 +26,7 @@ class WordsController < ApplicationController
   # GET /words.json
   def index
     starting = params[:id].nil? ? 'а' : params[:id]
-    @words = Word.where(["`value` like ?","#{starting}%"])
+    @words = Word.where(["`value` like ?","#{starting}%"]).order(:value)
   end
 
   # GET /words/1
