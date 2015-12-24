@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'create_words' => 'words#create_words', as: :create_words
   get 'new_words' => 'words#new_words', as: :new_words
   get 'rhyme' => 'words#rhyme', as: :rhyme
-  post 'rhyme' => 'words#rhyme'
+  post 'rhyme' => 'words#rhyme', as: :submit_rhyme
   root 'words#rhyme'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
